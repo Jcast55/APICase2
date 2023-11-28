@@ -8,6 +8,5 @@ import com.case2.demo.Modelo.Venta;
 import java.util.List;
 
 public interface VentaRepository extends JpaRepository<Venta, Long> {
-    List<Informe> findAllInformesByVenta(Venta venta);
     List<Venta> findAllByCuenta(Cuenta cuenta);
 }

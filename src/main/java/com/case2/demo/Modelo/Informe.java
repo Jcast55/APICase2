@@ -2,8 +2,8 @@ package com.case2.demo.Modelo;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
 @Entity
+@Data
 public class Informe {
 
     @Id
