@@ -1,4 +1,7 @@
 package com.case2.demo.Modelo;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,6 +23,7 @@ public class Informe {
 
     @ManyToOne
     @JoinColumn(name = "venta_id")
+    @JsonBackReference
     private Venta venta;
 
 }

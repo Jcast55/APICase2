@@ -3,12 +3,14 @@ package com.case2.demo.Service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.case2.demo.Modelo.Contacto;
+import jakarta.persistence.EntityNotFoundException;
 import com.case2.demo.Modelo.Cuenta;
 import com.case2.demo.Modelo.Venta;
 import com.case2.demo.Repository.CuentaRepository;
 import com.case2.demo.Repository.VentaRepository;
 import com.case2.demo.Service.CuentaService;
+
+import jakarta.persistence.EntityNotFoundException;
 
 import java.util.List;
 
@@ -30,10 +32,11 @@ public class CuentaServiceImpl  implements CuentaService {
         return null;
     }
 
-    @Override
-    public Cuenta obtenerCuentaPorId(Long cuentaId) {
-        return cuentaRepository.findById(cuentaId).orElse(null);
-    }
+ @Override
+public Cuenta obtenerCuentaPorId(Long cuentaId) {
+    return cuentaRepository.findById(cuentaId)
+            .orElseThrow(() -> new EntityNotFoundException("No se encontró la cuenta con ID: " + cuentaId));
+}
 
     @Override
     public void actualizarCuenta(Cuenta cuenta) {

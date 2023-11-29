@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Data
 @Entity
 public class Venta {
@@ -17,14 +20,12 @@ public class Venta {
     private String fechaCierre;
     private String etapa;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "cuenta_id")
     private Cuenta cuenta;
 
-    @ManyToOne
-    @JoinColumn(name = "contacto_id")
-    private Contacto contacto;
-
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "venta")
+    @JsonManagedReference
     private List<Informe> informes;
 }

@@ -1,11 +1,9 @@
 package com.case2.demo.Service;
 import java.util.List;
 
-import com.case2.demo.Modelo.Contacto;
 import com.case2.demo.Modelo.Cuenta;
 import com.case2.demo.Modelo.Venta;
 
-import java.util.List;
 
 public interface CuentaService {
     List<Cuenta> obtenerTodasLasCuentas();

@@ -26,10 +26,17 @@ public class CuentaController {
     @GetMapping("/{id}")
     public ResponseEntity<Cuenta> obtenerCuentaPorId(@PathVariable Long id) {
         Cuenta cuenta = cuentaService.obtenerCuentaPorId(id);
-        return cuenta != null ? new ResponseEntity<>(cuenta, HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    
+        if (cuenta != null) {
+            // Cargar explícitamente la colección de contactos
+            cuenta.getContactos().size();
+    
+            return new ResponseEntity<>(cuenta, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
-
+    
     @PostMapping(path = "/create", consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     public ResponseEntity<Cuenta> createCuenta(
             @RequestParam("nombre") String nombre,
