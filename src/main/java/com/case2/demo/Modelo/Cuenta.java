@@ -15,6 +15,7 @@ public class Cuenta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String idCuenta1;
     private String nombre;
     private String direccion;
     private String industria;

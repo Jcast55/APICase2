@@ -13,6 +13,7 @@ public class Informe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String idInforme1;
     private String fecha;
     private String tipo;
     private String detalles;
