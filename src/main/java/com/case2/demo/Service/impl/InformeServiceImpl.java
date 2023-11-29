@@ -44,4 +44,9 @@ public class InformeServiceImpl implements InformeService {
     public Informe crearInforme(Informe informe) {
         return informeRepository.save(informe);
     }
+
+    @Override
+    public List<Informe> obtenerTodosInformes() {
+       return informeRepository.findAll();
+    }
 }
