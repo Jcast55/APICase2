@@ -114,7 +114,51 @@ INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fec
 INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (10, 'Bodega 1', 'Detalles venta 5 - Informe 2', '2024-01-12', '2024-01-13', '2024-01-21', 'Plátanos', 'Fruta');
 INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (10, 'Bodega 3', 'Detalles venta 5 - Informe 3', '2024-01-13', '2024-01-14', '2024-01-22', 'Uvas', 'Fruta');
 
-INSERT INTO Cuenta (nombre, descripcion, tipo, direccion, industria) VALUES ('RoboTech Dynamics', 'Pioneros en robotica avanzada', 'Mediana', '555 Robotics St, Ciudad Robotica', 'Tecnologia');
+-- Cuenta 'RoboTech Dynamics'
+INSERT INTO Cuenta (nombre, descripcion, tipo, direccion, industria) VALUES ('RoboTech Dynamics', 'Pioneros en robótica avanzada', 'Mediana', '555 Robotics St, Ciudad Robotica', 'Tecnologia');
+
+-- Contactos cuenta 4
+INSERT INTO Contacto (nombre, correo_Electronico, cuenta_id) VALUES ('Eva', 'eva.robot@email.com', 4);
+INSERT INTO Contacto (nombre, correo_Electronico, cuenta_id) VALUES ('Adam', 'adam.robot@email.com', 4);
+INSERT INTO Contacto (nombre, correo_Electronico, cuenta_id) VALUES ('Ava', 'ava.robot@email.com', 4);
+INSERT INTO Contacto (nombre, correo_Electronico, cuenta_id) VALUES ('Atlas', 'atlas.robot@email.com', 4);
+INSERT INTO Contacto (nombre, correo_Electronico, cuenta_id) VALUES ('Sophia', 'sophia.robot@email.com', 4);
+
+-- Venta 6
+INSERT INTO Venta (monto, fecha_Cierre, etapa, cuenta_id) VALUES (300.00, '2024-01-15', 'Negociación Inicial', 4);
+-- Informes para la Venta 6
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (46, 'Bodega 1', 'Detalles venta 6 - Informe 1', '2024-01-16', '2024-01-17', '2024-01-25', 'Robots A', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (46, 'Bodega 2', 'Detalles venta 6 - Informe 2', '2024-01-17', '2024-01-18', '2024-01-26', 'Robots B', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (46, 'Bodega 1', 'Detalles venta 6 - Informe 3', '2024-01-18', '2024-01-19', '2024-01-27', 'Robots C', 'Robot');
+
+-- Venta 7
+INSERT INTO Venta (monto, fecha_Cierre, etapa, cuenta_id) VALUES (250.00, '2024-01-20', 'Presentación de Propuesta', 4);
+-- Informes para la Venta 7
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (47, 'Bodega 2', 'Detalles venta 7 - Informe 1', '2024-01-21', '2024-01-22', '2024-01-30', 'Robots D', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (47, 'Bodega 1', 'Detalles venta 7 - Informe 2', '2024-01-22', '2024-01-23', '2024-01-31', 'Robots E', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (47, 'Bodega 3', 'Detalles venta 7 - Informe 3', '2024-01-23', '2024-01-24', '2024-02-01', 'Robots F', 'Robot');
+
+-- Venta 8
+INSERT INTO Venta (monto, fecha_Cierre, etapa, cuenta_id) VALUES (180.00, '2024-02-01', 'Revisión de Contrato', 4);
+-- Informes para la Venta 8
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (48, 'Bodega 1', 'Detalles venta 8 - Informe 1', '2024-02-02', '2024-02-03', '2024-02-10', 'Robots G', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (48, 'Bodega 2', 'Detalles venta 8 - Informe 2', '2024-02-03', '2024-02-04', '2024-02-11', 'Robots H', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (48, 'Bodega 1', 'Detalles venta 8 - Informe 3', '2024-02-04', '2024-02-05', '2024-02-12', 'Robots I', 'Robot');
+
+-- Venta 9
+INSERT INTO Venta (monto, fecha_Cierre, etapa, cuenta_id) VALUES (200.00, '2024-02-08', 'Firma del Contrato', 4);
+-- Informes para la Venta 9
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (49, 'Bodega 2', 'Detalles venta 9 - Informe 1', '2024-02-09', '2024-02-10', '2024-02-18', 'Robots J', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (49, 'Bodega 1', 'Detalles venta 9 - Informe 2', '2024-02-10', '2024-02-11', '2024-02-19', 'Robots K', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (49, 'Bodega 3', 'Detalles venta 9 - Informe 3', '2024-02-11', '2024-02-12', '2024-02-20', 'Robots L', 'Robot');
+
+-- Venta 10
+INSERT INTO Venta (monto, fecha_Cierre, etapa, cuenta_id) VALUES (300.00, '2024-02-15', 'Entrega del Producto', 4);
+-- Informes para la Venta 10
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (50, 'Bodega 1', 'Detalles venta 10 - Informe 1', '2024-02-16', '2024-02-17', '2024-02-25', 'Robots M', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (50, 'Bodega 2', 'Detalles venta 10 - Informe 2', '2024-02-17', '2024-02-18', '2024-02-26', 'Robots N', 'Robot');
+INSERT INTO Informe (venta_id, bodega_salida, detalles, fecha, fecha_salida, fecha_vencimiento, producto, tipo) VALUES (50, 'Bodega 1', 'Detalles venta 10 - Informe 3', '2024-02-18', '2024-02-19', '2024-02-27', 'Robots O', 'Robot');
+
 INSERT INTO Cuenta (nombre, descripcion, tipo, direccion, industria) VALUES ('TradeMasters Ltd.', 'Especialistas en comercio internacional', 'Grande', '789 Commerce Blvd, Ciudad Global', 'Comercial');
 INSERT INTO Cuenta (nombre, descripcion, tipo, direccion, industria) VALUES ('RetailRise Solutions', 'Transformando la experiencia de compra minorista', 'Mediana', '456 Market St, Pueblo Comercial', 'Comercial');
 INSERT INTO Cuenta (nombre, descripcion, tipo, direccion, industria) VALUES ('LogiTrade Logistics', 'Soluciones logisticas para la cadena de suministro', 'Grande', '123 Logistics Lane, Ciudad Logistica', 'Comercial');
