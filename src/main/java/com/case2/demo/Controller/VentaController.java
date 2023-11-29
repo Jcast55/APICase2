@@ -23,12 +23,6 @@ public class VentaController {
     @Autowired
     private CuentaService cuentaService;
 
-    @GetMapping
-    public ResponseEntity<List<Venta>> obtenerTodaslasVentas() {
-        List<Venta> ventas = ventaService.obtenerTodasLasVentas();
-        return new ResponseEntity<>(ventas, HttpStatus.OK);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<Venta> obtenerVentaId(@PathVariable Long id) {
         Venta venta = ventaService.obtenerVentaPorId(id);
