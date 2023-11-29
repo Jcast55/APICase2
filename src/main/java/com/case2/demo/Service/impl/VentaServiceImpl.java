@@ -45,4 +45,9 @@ public class VentaServiceImpl implements VentaService {
     public Venta crearVenta(Venta venta) {
         return ventaRepository.save(venta);
     }
+
+    @Override
+    public List<Venta> obtenerTodasLasVentas() {
+         return ventaRepository.findAll();
+    }
 }
