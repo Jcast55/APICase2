@@ -23,8 +23,24 @@ public class Informe {
     private String fechaVencimiento;
 
     @ManyToOne
-    @JoinColumn(name = "venta_id")
     @JsonBackReference
+    @JoinColumn(name = "venta_id")
     private Venta venta;
+
+    @Override
+    public String toString() {
+        return "Informe{" +
+                "id=" + id +
+                ", idInforme1='" + idInforme1 + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", tipo='" + tipo + '\'' +
+                ", detalles='" + detalles + '\'' +
+                ", producto='" + producto + '\'' +
+                ", bodegaSalida='" + bodegaSalida + '\'' +
+                ", fechaSalida='" + fechaSalida + '\'' +
+                ", fechaVencimiento='" + fechaVencimiento + '\'' +
+                ", venta=" + (venta != null ? venta.getId() : "null") +
+                '}';
+    }
 
 }

@@ -26,7 +26,7 @@ public class Venta {
     @JoinColumn(name = "cuenta_id")
     private Cuenta cuenta;
 
-    @OneToMany(mappedBy = "venta")
+    @OneToMany(mappedBy = "venta",cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Informe> informes;
 }

@@ -8,9 +8,12 @@ import com.case2.demo.Service.VentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.StreamingHttpOutputMessage.Body;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/informes")
@@ -28,11 +31,23 @@ public class InformeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Informe> obtenerInformePorId(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> obtenerInformePorId(@PathVariable Long id) {
         Informe informe = informeService.obtenerInformePorId(id);
 
         if (informe != null) {
-            return new ResponseEntity<>(informe, HttpStatus.OK);
+            Map<String, Object> informeDTO = new HashMap<>();
+            informeDTO.put("id", informe.getId());
+            informeDTO.put("idInforme1", informe.getIdInforme1());
+            informeDTO.put("fecha", informe.getFecha());
+            informeDTO.put("tipo", informe.getTipo());
+            informeDTO.put("detalles", informe.getDetalles());
+            informeDTO.put("producto", informe.getProducto());
+            informeDTO.put("bodegaSalida", informe.getBodegaSalida());
+            informeDTO.put("fechaSalida", informe.getFechaSalida());
+            informeDTO.put("fechaVencimiento", informe.getFechaVencimiento());
+            informeDTO.put("ventaId", informe.getVenta().getId());
+
+            return new ResponseEntity<>(informeDTO, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
